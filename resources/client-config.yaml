@@ -1,0 +1,8 @@
+log-level: trace
+client:
+  server-addr: :9011
+  conn-timeout: 5
+  read-timeout: 5
+  write-timeout: 5
+parallel-requests: 5
+next-quote-delay-ms: 100

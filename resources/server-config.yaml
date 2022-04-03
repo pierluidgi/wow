@@ -1,0 +1,12 @@
+log-level: trace
+quotes-filename: ./resources/words-of-wisdom.txt
+server:
+  listen: :9011
+  read-timeout: 5
+  write-timeout: 5
+  ddos-rate: 0
+  target-bits: 20
+  challenge-ttl: 60
+cache-ttl: 60
+rate-interval: 5
+rate-size: 3

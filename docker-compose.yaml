@@ -1,0 +1,24 @@
+services:
+  wow-server:
+    build:
+      context: ./
+      dockerfile: ./server.Dockerfile
+    networks:
+      - wow-tier
+    ports:
+      - "9011:9011"
+  wow-client:
+    build:
+      context: ./
+      dockerfile: ./client.Dockerfile
+    depends_on:
+      - wow-server
+    networks:
+      - wow-tier
+    links:
+      - "wow-server:server"
+    environment:
+      - "SERVER_ADDR=server:9011"
+networks:
+  wow-tier:
+    driver: bridge
