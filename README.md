@@ -31,8 +31,12 @@ go run server.go -config ./resources/server-config.yaml
 - **parallel-requests** – сколько параллельных запросов будет отправлять клиент
 - **next-quote-delay-ms** – максимальная задержка в миллисекундах между запросами
 
-Запустить сервер локально можно командой:
+Запустить клиент локально можно командой:
 
 ```sh
 go run client.go -config ./resources/client-config.yaml
 ```
+
+## Запуск через Docker
+
+Для сервера и клиента созданы отдельные докер-файлы **server.Dockerfile** и **client.Dockerfile**, а также имеется возможность запустить одновременно и сервер и клиент через Docker Compose.
