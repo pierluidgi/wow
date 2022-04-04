@@ -118,7 +118,7 @@ func (s *Server) respondQuote(conn net.Conn) {
 }
 
 func (s *Server) challengeSignature(hc *hashcash.HashCash) uint32 {
-	signature := uint32(hc.TargetBits) ^ hc.Timestamp ^ uint32(hc.Data>>32) ^ uint32(hc.Data>>16) ^ s.secretKey
+	signature := uint32(hc.TargetBits) ^ hc.Timestamp ^ uint32(hc.Data<<32) ^ uint32(hc.Data>>16) ^ s.secretKey
 	return signature
 }
 
